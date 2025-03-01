@@ -1,7 +1,7 @@
-layout: {qmk_keyboard: sofle/rev1}
+layout: {zmk_keyboard: splitkb_aurora_sofle}
 layers:
-  default:
-  - {t: ESC, s: '`'}
+  querty:
+  - ESCAPE
   - '1'
   - '2'
   - '3'
@@ -15,17 +15,17 @@ layers:
   - {t: '~', s: '&caps_word'}
   - TAB
   - Q
-  - W
-  - E
-  - R
+  - {t: W, h: LEFT CONTROL}
+  - {t: E, h: LEFT ALT}
+  - {t: R, h: LEFT WIN}
   - T
   - Y
-  - U
-  - I
-  - O
+  - {t: U, h: RIGHT WIN}
+  - {t: I, h: RIGHT ALT}
+  - {t: O, h: RIGHT CONTROL}
   - P
   - {t: BACKSPACE, s: DELETE}
-  - LSHFT
+  - '&caps_word'
   - A
   - S
   - D
@@ -37,7 +37,7 @@ layers:
   - L
   - ;
   - ''''
-  - LCTRL
+  - LEFT CONTROL
   - Z
   - X
   - C
@@ -50,17 +50,78 @@ layers:
   - ','
   - .
   - /
-  - RSHFT
-  - LGUI
+  - {t: \, h: Sft+Alt+LCTRL}
+  - ''
   - RGB TOG
-  - LALT
-  - lower
-  - SPACE
-  - RET
-  - raise
-  - RCTRL
-  - RALT
-  - RGUI
+  - OUT TOG
+  - {t: LEFT WIN, h: lower}
+  - {t: SPACE, h: LEFT SHIFT}
+  - {t: ENTER, h: RIGHT CONTROL}
+  - upper
+  - ''
+  - ''
+  - ''
+  Focal:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - V
+  - {t: L, h: LEFT CONTROL}
+  - {t: H, h: LEFT ALT}
+  - {t: G, h: LEFT WIN}
+  - K
+  - Q
+  - {t: F, h: RIGHT WIN}
+  - {t: O, h: RIGHT ALT}
+  - {t: U, h: RIGHT CONTROL}
+  - J
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - S
+  - R
+  - N
+  - T
+  - B
+  - Y
+  - C
+  - A
+  - E
+  - I
+  - /
+  - {t: ▽, type: trans}
+  - Z
+  - X
+  - M
+  - D
+  - P
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''''
+  - W
+  - .
+  - ;
+  - ','
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   lower:
   - F1
   - F2
@@ -75,91 +136,91 @@ layers:
   - F11
   - F12
   - '`'
-  - '1'
-  - '2'
-  - '3'
-  - '4'
-  - '5'
-  - '6'
-  - '7'
-  - '8'
-  - '9'
-  - '0'
-  - ''
-  - {t: ▽, type: trans}
   - '!'
   - '@'
   - '#'
-  - $
-  - '%'
-  - ^
-  - '&'
-  - KP MULTIPLY
-  - (
-  - )
-  - '|'
-  - {t: ▽, type: trans}
-  - '='
-  - '-'
-  - KP PLUS
   - '{'
   - '}'
+  - KP 7
+  - KP 8
+  - KP 9
+  - '-'
+  - /
+  - BACKSPACE
   - {t: ▽, type: trans}
+  - ^
+  - '&'
+  - '*'
+  - (
+  - )
+  - KP 4
+  - KP 5
+  - KP 6
+  - +
+  - '*'
+  - DELETE
   - {t: ▽, type: trans}
+  - ''
+  - $
+  - '%'
   - '['
   - ']'
-  - ;
-  - ':'
-  - \
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - KP 1
+  - KP 2
+  - KP 3
+  - .
+  - '='
   - {t: ▽, type: trans}
+  - {t: Focal, h: toggle}
   - {t: ▽, type: trans}
+  - '&studio_unlock'
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: KP 0, h: upper}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  raise:
+  upper:
   - BT CLR
+  - BT NXT
+  - RGB EFF
+  - {t: ▽, type: trans}
+  - RGB BRD
+  - RGB BRI
+  - RGB COLOR HSB(38,81,46)
+  - RGB COLOR HSB(166,80,47)
+  - RGB COLOR HSB(233,82,48)
+  - RGB SPD
+  - RGB SPI
+  - BT CLR ALL
   - {t: BT, h: '0'}
   - {t: BT, h: '1'}
-  - {t: BT, h: '2'}
-  - {t: BT, h: '3'}
-  - {t: BT, h: '4'}
+  - SYSREQ
+  - APPLICATION
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - INS
-  - PSCRN
-  - CMENU
-  - OUT USB
-  - OUT BLE
   - PG UP
   - HOME
   - UP
   - END
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: BT, h: '2'}
+  - {t: BT, h: '3'}
+  - ''
+  - ''
+  - ''
   - {t: ▽, type: trans}
-  - LALT
-  - LCTRL
-  - LSHFT
-  - {t: ▽, type: trans}
-  - CLCK
   - PG DN
   - LEFT
   - DOWN
   - RIGHT
-  - DEL
-  - BSPC
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: BT, h: '4'}
   - UNDO
   - CUT
   - COPY
@@ -168,9 +229,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - Sft+Ctl+TAB
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Ctl+TAB
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -183,56 +244,56 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  adjust:
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - RGB EFF
-  - ''
-  - ''
-  - ''
-  - ''
-  - {t: ▽, type: trans}
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  '4':
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ''
-  - PREV
-  - PP
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - VOLUME DOWN
+  - VOL UP
+  - MUTE
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - PREVIOUS
+  - PLAY PAUSE
+  - STOP
   - NEXT
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
   - {t: ▽, type: trans}
-  - ''
-  - RA(S)
-  - RA(Q)
-  - RA(P)
-  - RA(Y)
+  - AltGr+5
+  - AltGr+Q
+  - AltGr+P
+  - AltGr+Y
+  - AltGr+S
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
