@@ -62,6 +62,42 @@
             #sensor-binding-cells = <0>;
             bindings = <&rgb_ug RGB_SAD>, <&rgb_ug RGB_SAI>;
         };
+
+        lh_pht: lh_pht {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Left hand hold tap";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <100>;
+            flavor = "tap-unless-interrupted";
+            quick-tap-ms = <200>;
+            hold-trigger-key-positions = <55 43 56 44 30 6 7 8 9 10 11 19 20 21 22 23 31 32 33 34 35 45 46 47 48 49 57 58 59 18>;
+        };
+
+        rh_pht: rh_pht {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Right hand hold tap";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <100>;
+            quick-tap-ms = <200>;
+            flavor = "tap-unless-interrupted";
+            retro-tap;
+            hold-trigger-key-positions = <0 1 2 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 50 51 52 53 3 54 42>;
+        };
+
+        br_pht: br_pht {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Bottom row hold tap";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <500>;
+            flavor = "tap-unless-interrupted";
+        };
     };
 
     keymap {
@@ -69,11 +105,11 @@
 
         querty {
             bindings = <
-&kp ESCAPE        &kp N1  &kp N2              &kp N3           &kp N4          &kp N5                                                         &kp N6  &kp N7           &kp N8           &kp N9               &kp N0    &tilde_caps
-&kp TAB           &kp Q   &mt LEFT_CONTROL W  &mt LEFT_ALT E   &mt LEFT_WIN R  &kp T                                                          &kp Y   &mt RIGHT_WIN U  &mt RIGHT_ALT I  &mt RIGHT_CONTROL O  &kp P     &bspc_del
-&caps_word        &kp A   &kp S               &kp D            &kp F           &kp G                                                          &kp H   &kp J            &kp K            &kp L                &kp SEMI  &kp SQT
-&kp LEFT_CONTROL  &kp Z   &kp X               &kp C            &kp V           &kp B           &kp C_MUTE              &none                  &kp N   &kp M            &kp COMMA        &kp DOT              &kp FSLH  &mt LS(LA(LCTRL)) BACKSLASH
-                          &none               &rgb_ug RGB_TOG  &out OUT_TOG    &lt 2 LEFT_WIN  &mt LEFT_SHIFT SPACE    &mt RIGHT_CONTROL RET  &mo 3   &none            &none            &none
+&kp ESCAPE        &kp N1  &kp N2                  &kp N3              &kp N4              &kp N5                                                                   &kp N6  &kp N7               &kp N8               &kp N9                   &kp N0    &tilde_caps
+&kp TAB           &kp Q   &lh_pht LEFT_CONTROL W  &lh_pht LEFT_ALT E  &lh_pht LEFT_WIN R  &kp T                                                                    &kp Y   &rh_pht RIGHT_WIN U  &rh_pht RIGHT_ALT I  &rh_pht RIGHT_CONTROL O  &kp P     &bspc_del
+&caps_word        &kp A   &kp S                   &kp D               &kp F               &kp G                                                                    &kp H   &kp J                &kp K                &kp L                    &kp SEMI  &kp SQT
+&kp LEFT_CONTROL  &kp Z   &kp X                   &kp C               &kp V               &kp B           &kp C_MUTE                  &none                        &kp N   &kp M                &kp COMMA            &kp DOT                  &kp FSLH  &mt LS(LA(LCTRL)) BACKSLASH
+                          &none                   &rgb_ug RGB_TOG     &out OUT_TOG        &lt 2 LEFT_WIN  &br_pht LEFT_SHIFT SPACE    &br_pht RIGHT_CONTROL ENTER  &mo 3   &none                &none                &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
@@ -81,11 +117,11 @@
 
         Focal {
             bindings = <
-&trans  &trans  &trans              &trans          &trans          &trans                    &trans   &trans           &trans           &trans               &trans     &trans
-&trans  &kp V   &mt LEFT_CONTROL L  &mt LEFT_ALT H  &mt LEFT_WIN G  &kp K                     &kp Q    &mt RIGHT_WIN F  &mt RIGHT_ALT O  &mt RIGHT_CONTROL U  &kp J      &trans
-&trans  &kp S   &kp R               &kp N           &kp T           &kp B                     &kp Y    &kp C            &kp A            &kp E                &kp I      &kp SLASH
-&trans  &kp Z   &kp X               &kp M           &kp D           &kp P   &trans    &trans  &kp SQT  &kp W            &kp DOT          &kp SEMI             &kp COMMA  &trans
-                &trans              &trans          &trans          &trans  &trans    &trans  &trans   &trans           &trans           &trans
+&trans  &trans  &trans                  &trans              &trans              &trans                    &trans   &trans               &trans               &trans                   &trans     &trans
+&trans  &kp V   &lh_pht LEFT_CONTROL L  &lh_pht LEFT_ALT H  &lh_pht LEFT_WIN G  &kp K                     &kp Q    &rh_pht RIGHT_WIN F  &rh_pht RIGHT_ALT O  &rh_pht RIGHT_CONTROL U  &kp J      &trans
+&trans  &kp S   &kp R                   &kp N               &kp T               &kp B                     &kp Y    &kp C                &kp A                &kp E                    &kp I      &kp SLASH
+&trans  &kp Z   &kp X                   &kp M               &kp D               &kp P   &trans    &trans  &kp SQT  &kp W                &kp DOT              &kp SEMI                 &kp COMMA  &trans
+                &trans                  &trans              &trans              &trans  &trans    &trans  &trans   &trans               &trans               &trans
             >;
 
             sensor-bindings =
@@ -99,7 +135,7 @@
 &kp GRAVE  &kp EXCLAMATION  &kp AT         &kp HASH      &kp LEFT_BRACE        &kp RIGHT_BRACE                          &kp KP_NUMBER_7    &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp MINUS   &kp SLASH     &kp BACKSPACE
 &trans     &kp CARET        &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                    &kp KP_NUMBER_4    &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp PLUS    &kp ASTERISK  &kp DELETE
 &trans     &none            &kp DOLLAR     &kp PERCENT   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans    &trans  &kp KP_NUMBER_1    &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD  &kp EQUAL     &trans
-                            &tog 1         &trans        &trans                &trans                 &trans    &trans  &lt 3 KP_NUMBER_0  &trans           &trans           &trans
+                            &tog 1         &trans        &studio_unlock        &trans                 &trans    &trans  &lt 3 KP_NUMBER_0  &trans           &trans           &trans
             >;
 
             sensor-bindings =
