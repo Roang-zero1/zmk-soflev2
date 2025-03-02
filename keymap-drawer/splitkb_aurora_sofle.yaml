@@ -210,9 +210,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: BT, h: '2'}
   - {t: BT, h: '3'}
-  - ''
-  - ''
-  - ''
+  - LEFT CONTROL
+  - LEFT ALT
+  - LEFT WIN
   - {t: ▽, type: trans}
   - PG DN
   - LEFT
